@@ -31,11 +31,14 @@ export default function BlogDetail({
     <Layout className={className} withNavbar={!previewData}>
       <Title>{blogData.title}</Title>
 
-      <Flex align="center" gap="sm" className="text-gray-500">
+      <Flex
+        gap="sm"
+        className="flex-col text-gray-500 md:flex-row md:items-center"
+      >
         <Badge color="pink">{blogData.category}</Badge>
-        <span>&bull;</span>
+        <span className="hidden md:block">&bull;</span>
         <p>{blogData.authorName}</p>
-        <span>&bull;</span>
+        <span className="hidden md:block">&bull;</span>
         <p>
           {dayjs(blogData.createdDateISO).format(
             'D MMMM YYYY, HH:mm'
